@@ -1,0 +1,7 @@
+Scrapy
+python-dotenv
+pymongo
+unidecode
+pytz
+pyyaml
+

@@ -1,0 +1,15 @@
+lamcad:
+  server_ip: "200.137.215.26"
+  server_port: 22
+  ssh_username: "suporte"
+  ssh_password: "*z!IGW\\iBj-ZR,gg"
+  local_bind_ip: "localhost"
+  local_bind_port: 27018
+  remote_bind_ip: "127.0.0.1"
+  remote_bind_port: 27017
+
+mongodb_lamcad:
+  uri: "mongodb://suporte:*z!IGW\\iBj-ZR,gg@localhost:27018/couser?directConnection=true&serverSelectionTimeoutMS=2000"
+  database: "couser"
+  accepted_news_collection: "newsData"
+  unaccepted_news_collection: "unacceptedNews"

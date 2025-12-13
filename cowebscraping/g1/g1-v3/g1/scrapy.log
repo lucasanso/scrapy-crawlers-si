@@ -1,0 +1,1565 @@
+2025-12-13 00:32:39 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 00:32:39 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 00:32:39 [scrapy.addons] INFO: Enabled addons:
+[]
+2025-12-13 00:32:39 [py.warnings] WARNING: /home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/request.py:254: ScrapyDeprecationWarning: '2.6' is a deprecated value for the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting.
+
+It is also the default value. In other words, it is normal to get this warning if you have not defined a value for the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting. This is so for backward compatibility reasons, but it will change in a future version of Scrapy.
+
+See the documentation of the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting for information on how to handle this deprecation.
+  return cls(crawler)
+
+2025-12-13 00:32:39 [asyncio] DEBUG: Using selector: EpollSelector
+2025-12-13 00:32:39 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2025-12-13 00:32:39 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2025-12-13 00:32:39 [scrapy.extensions.telnet] INFO: Telnet Password: 3a7f07a824699944
+2025-12-13 00:32:40 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+2025-12-13 00:32:40 [scrapy.crawler] INFO: Overridden settings:
+{'AUTOTHROTTLE_ENABLED': True,
+ 'BOT_NAME': 'g1',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 2,
+ 'CONCURRENT_REQUESTS_PER_IP': 2,
+ 'DOWNLOAD_DELAY': 3,
+ 'LOG_FILE': 'scrapy.log',
+ 'NEWSPIDER_MODULE': 'g1.spiders',
+ 'RETRY_TIMES': 1,
+ 'SPIDER_MODULES': ['g1.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, '
+               'like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+2025-12-13 00:32:40 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-12-13 00:32:40 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-12-13 00:32:40 [scrapy.middleware] INFO: Enabled item pipelines:
+['g1.pipelines.MongoDBPipeline']
+2025-12-13 00:32:40 [scrapy.core.engine] INFO: Spider opened
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: starting thread (client mode): 0x955fb0b0
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Local version/idstring: SSH-2.0-paramiko_3.4.0
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Remote version/idstring: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.13
+2025-12-13 00:32:40 [paramiko.transport] INFO: Connected (version 2.0, client OpenSSH_8.9p1)
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === Key exchange possibilities ===
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: kex algos: curve25519-sha256, curve25519-sha256@libssh.org, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, sntrup761x25519-sha512@openssh.com, diffie-hellman-group-exchange-sha256, diffie-hellman-group16-sha512, diffie-hellman-group18-sha512, diffie-hellman-group14-sha256, kex-strict-s-v00@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server key: rsa-sha2-512, rsa-sha2-256, ecdsa-sha2-nistp256, ssh-ed25519
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client compress: none, zlib@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server compress: none, zlib@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client lang: <none>
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server lang: <none>
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: kex follows: False
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === Key exchange agreements ===
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Strict kex mode: True
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Kex: curve25519-sha256@libssh.org
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: HostKey: ssh-ed25519
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Cipher: aes128-ctr
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: MAC: hmac-sha2-256
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Compression: none
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === End of kex handshake ===
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Resetting outbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Switch to new keys ...
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Resetting inbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Got EXT_INFO: {'server-sig-algs': b'ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com,webauthn-sk-ecdsa-sha2-nistp256@openssh.com', 'publickey-hostbound@openssh.com': b'0'}
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Attempting public-key auth...
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: userauth is OK
+2025-12-13 00:32:40 [paramiko.transport] INFO: Authentication (publickey) failed.
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: starting thread (client mode): 0x961ed850
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Local version/idstring: SSH-2.0-paramiko_3.4.0
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Remote version/idstring: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.13
+2025-12-13 00:32:40 [paramiko.transport] INFO: Connected (version 2.0, client OpenSSH_8.9p1)
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: EOF in transport thread
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === Key exchange possibilities ===
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: kex algos: curve25519-sha256, curve25519-sha256@libssh.org, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, sntrup761x25519-sha512@openssh.com, diffie-hellman-group-exchange-sha256, diffie-hellman-group16-sha512, diffie-hellman-group18-sha512, diffie-hellman-group14-sha256, kex-strict-s-v00@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server key: rsa-sha2-512, rsa-sha2-256, ecdsa-sha2-nistp256, ssh-ed25519
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client compress: none, zlib@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server compress: none, zlib@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client lang: <none>
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server lang: <none>
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: kex follows: False
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === Key exchange agreements ===
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Strict kex mode: True
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Kex: curve25519-sha256@libssh.org
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: HostKey: ssh-ed25519
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Cipher: aes128-ctr
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: MAC: hmac-sha2-256
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Compression: none
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === End of kex handshake ===
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Resetting outbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Switch to new keys ...
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Resetting inbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Got EXT_INFO: {'server-sig-algs': b'ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com,webauthn-sk-ecdsa-sha2-nistp256@openssh.com', 'publickey-hostbound@openssh.com': b'0'}
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Attempting public-key auth...
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: userauth is OK
+2025-12-13 00:32:40 [paramiko.transport] INFO: Authentication (publickey) failed.
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: starting thread (client mode): 0x95749ee0
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Local version/idstring: SSH-2.0-paramiko_3.4.0
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Remote version/idstring: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.13
+2025-12-13 00:32:40 [paramiko.transport] INFO: Connected (version 2.0, client OpenSSH_8.9p1)
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: EOF in transport thread
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === Key exchange possibilities ===
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: kex algos: curve25519-sha256, curve25519-sha256@libssh.org, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, sntrup761x25519-sha512@openssh.com, diffie-hellman-group-exchange-sha256, diffie-hellman-group16-sha512, diffie-hellman-group18-sha512, diffie-hellman-group14-sha256, kex-strict-s-v00@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server key: rsa-sha2-512, rsa-sha2-256, ecdsa-sha2-nistp256, ssh-ed25519
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client compress: none, zlib@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server compress: none, zlib@openssh.com
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: client lang: <none>
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: server lang: <none>
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: kex follows: False
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === Key exchange agreements ===
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Strict kex mode: True
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Kex: curve25519-sha256@libssh.org
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: HostKey: ssh-ed25519
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Cipher: aes128-ctr
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: MAC: hmac-sha2-256
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: Compression: none
+2025-12-13 00:32:40 [paramiko.transport] DEBUG: === End of kex handshake ===
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Resetting outbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Switch to new keys ...
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Resetting inbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Got EXT_INFO: {'server-sig-algs': b'ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com,webauthn-sk-ecdsa-sha2-nistp256@openssh.com', 'publickey-hostbound@openssh.com': b'0'}
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Attempting password auth...
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: userauth is OK
+2025-12-13 00:32:41 [paramiko.transport] INFO: Authentication (password) successful!
+2025-12-13 00:32:41 [scrape] INFO: Conexão com o LamCAD criada com o seguinte IP e porta: ('127.0.0.1', 27018)
+2025-12-13 00:32:41 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: [chan 0] Max packet in: 32768 bytes
+2025-12-13 00:32:41 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2025-12-13 00:32:41 [scrapy-playwright] INFO: Starting download handler
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Received global request "hostkeys-00@openssh.com"
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Rejecting "hostkeys-00@openssh.com" global request from server.
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: [chan 0] Max packet out: 32768 bytes
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Secsh channel 0 opened.
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: [chan 1] Max packet in: 32768 bytes
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: [chan 1] Max packet out: 32768 bytes
+2025-12-13 00:32:41 [paramiko.transport] DEBUG: Secsh channel 1 opened.
+2025-12-13 00:32:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-01T00%3A00%3A00-0300&to=2011-01-01T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:32:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-17T00%3A00%3A00-0300&to=2011-01-17T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:32:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-01T00%3A00%3A00-0300&to=2011-01-01T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:32:46 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-17T00%3A00%3A00-0300&to=2011-01-17T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:32:46 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:32:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-18T00%3A00%3A00-0300&to=2011-01-18T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:32:49 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-18T00%3A00%3A00-0300&to=2011-01-18T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:32:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-02T00%3A00%3A00-0300&to=2011-01-02T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:32:50 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-02T00%3A00%3A00-0300&to=2011-01-02T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:32:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-19T00%3A00%3A00-0300&to=2011-01-19T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:32:53 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-19T00%3A00%3A00-0300&to=2011-01-19T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:32:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-03T00%3A00%3A00-0300&to=2011-01-03T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:32:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-03T00%3A00%3A00-0300&to=2011-01-03T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:32:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-20T00%3A00%3A00-0300&to=2011-01-20T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:32:56 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-20T00%3A00%3A00-0300&to=2011-01-20T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:32:56 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:32:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-04T00%3A00%3A00-0300&to=2011-01-04T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:32:57 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-04T00%3A00%3A00-0300&to=2011-01-04T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-21T00%3A00%3A00-0300&to=2011-01-21T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:00 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-21T00%3A00%3A00-0300&to=2011-01-21T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-05T00%3A00%3A00-0300&to=2011-01-05T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:01 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-05T00%3A00%3A00-0300&to=2011-01-05T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-22T00%3A00%3A00-0300&to=2011-01-22T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:04 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-22T00%3A00%3A00-0300&to=2011-01-22T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-06T00%3A00%3A00-0300&to=2011-01-06T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:06 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-06T00%3A00%3A00-0300&to=2011-01-06T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:06 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:33:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-07T00%3A00%3A00-0300&to=2011-01-07T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:08 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-07T00%3A00%3A00-0300&to=2011-01-07T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-23T00%3A00%3A00-0300&to=2011-01-23T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:09 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-23T00%3A00%3A00-0300&to=2011-01-23T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-08T00%3A00%3A00-0300&to=2011-01-08T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:11 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-08T00%3A00%3A00-0300&to=2011-01-08T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-24T00%3A00%3A00-0300&to=2011-01-24T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:13 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-24T00%3A00%3A00-0300&to=2011-01-24T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-09T00%3A00%3A00-0300&to=2011-01-09T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:15 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-09T00%3A00%3A00-0300&to=2011-01-09T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:16 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:33:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-25T00%3A00%3A00-0300&to=2011-01-25T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:17 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-25T00%3A00%3A00-0300&to=2011-01-25T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-10T00%3A00%3A00-0300&to=2011-01-10T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:19 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-10T00%3A00%3A00-0300&to=2011-01-10T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-26T00%3A00%3A00-0300&to=2011-01-26T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:20 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-26T00%3A00%3A00-0300&to=2011-01-26T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-11T00%3A00%3A00-0300&to=2011-01-11T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-11T00%3A00%3A00-0300&to=2011-01-11T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-27T00%3A00%3A00-0300&to=2011-01-27T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:33:24 [scrapy.core.scraper] ERROR: Spider error processing <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-27T00%3A00%3A00-0300&to=2011-01-27T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+Traceback (most recent call last):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/defer.py", line 295, in aiter_errback
+    yield await it.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 374, in __anext__
+    return await self.data.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/python.py", line 355, in _async_chain
+    async for o in as_async_generator(it):
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/asyncgen.py", line 14, in as_async_generator
+    async for r in it:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/offsite.py", line 31, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/referer.py", line 355, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/urllength.py", line 30, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/spidermiddlewares/depth.py", line 35, in process_spider_output_async
+    async for r in result or ():
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/core/spidermw.py", line 118, in process_async
+    async for r in iterable:
+  File "/home/sanso/Área de trabalho/G1 FUNCIONAL/cowebscraping/web_scraping/g1-v3/g1/spiders/scrape.py", line 117, in parse_results_page
+    page = response.meta["playwright_page"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'playwright_page'
+2025-12-13 00:33:26 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2025-12-13 00:33:26 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2025-12-13 00:33:26 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2025-12-13 00:35:58 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 00:35:58 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 00:35:58 [scrapy.addons] INFO: Enabled addons:
+[]
+2025-12-13 00:35:58 [py.warnings] WARNING: /home/sanso/Área de trabalho/G1 FUNCIONAL/venv/lib/python3.12/site-packages/scrapy/utils/request.py:254: ScrapyDeprecationWarning: '2.6' is a deprecated value for the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting.
+
+It is also the default value. In other words, it is normal to get this warning if you have not defined a value for the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting. This is so for backward compatibility reasons, but it will change in a future version of Scrapy.
+
+See the documentation of the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting for information on how to handle this deprecation.
+  return cls(crawler)
+
+2025-12-13 00:35:58 [asyncio] DEBUG: Using selector: EpollSelector
+2025-12-13 00:35:58 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2025-12-13 00:35:58 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2025-12-13 00:35:58 [scrapy.extensions.telnet] INFO: Telnet Password: d0e60e2359c52f31
+2025-12-13 00:35:58 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle']
+2025-12-13 00:35:58 [scrapy.crawler] INFO: Overridden settings:
+{'AUTOTHROTTLE_ENABLED': True,
+ 'BOT_NAME': 'g1',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 2,
+ 'CONCURRENT_REQUESTS_PER_IP': 2,
+ 'DOWNLOAD_DELAY': 3,
+ 'LOG_FILE': 'scrapy.log',
+ 'NEWSPIDER_MODULE': 'g1.spiders',
+ 'RETRY_TIMES': 1,
+ 'SPIDER_MODULES': ['g1.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, '
+               'like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+2025-12-13 00:35:58 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-12-13 00:35:58 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-12-13 00:35:58 [scrapy.middleware] INFO: Enabled item pipelines:
+['g1.pipelines.MongoDBPipeline']
+2025-12-13 00:35:58 [scrapy.core.engine] INFO: Spider opened
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: starting thread (client mode): 0x9ad6d9d0
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Local version/idstring: SSH-2.0-paramiko_3.4.0
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Remote version/idstring: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.13
+2025-12-13 00:35:58 [paramiko.transport] INFO: Connected (version 2.0, client OpenSSH_8.9p1)
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: === Key exchange possibilities ===
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: kex algos: curve25519-sha256, curve25519-sha256@libssh.org, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, sntrup761x25519-sha512@openssh.com, diffie-hellman-group-exchange-sha256, diffie-hellman-group16-sha512, diffie-hellman-group18-sha512, diffie-hellman-group14-sha256, kex-strict-s-v00@openssh.com
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: server key: rsa-sha2-512, rsa-sha2-256, ecdsa-sha2-nistp256, ssh-ed25519
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: client encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: server encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: client mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: server mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: client compress: none, zlib@openssh.com
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: server compress: none, zlib@openssh.com
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: client lang: <none>
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: server lang: <none>
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: kex follows: False
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: === Key exchange agreements ===
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Strict kex mode: True
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Kex: curve25519-sha256@libssh.org
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: HostKey: ssh-ed25519
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Cipher: aes128-ctr
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: MAC: hmac-sha2-256
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Compression: none
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: === End of kex handshake ===
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Resetting outbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Switch to new keys ...
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Resetting inbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Got EXT_INFO: {'server-sig-algs': b'ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com,webauthn-sk-ecdsa-sha2-nistp256@openssh.com', 'publickey-hostbound@openssh.com': b'0'}
+2025-12-13 00:35:58 [paramiko.transport] DEBUG: Attempting public-key auth...
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: userauth is OK
+2025-12-13 00:35:59 [paramiko.transport] INFO: Authentication (publickey) failed.
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: starting thread (client mode): 0x9b7dd850
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Local version/idstring: SSH-2.0-paramiko_3.4.0
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Remote version/idstring: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.13
+2025-12-13 00:35:59 [paramiko.transport] INFO: Connected (version 2.0, client OpenSSH_8.9p1)
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: EOF in transport thread
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: === Key exchange possibilities ===
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: kex algos: curve25519-sha256, curve25519-sha256@libssh.org, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, sntrup761x25519-sha512@openssh.com, diffie-hellman-group-exchange-sha256, diffie-hellman-group16-sha512, diffie-hellman-group18-sha512, diffie-hellman-group14-sha256, kex-strict-s-v00@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server key: rsa-sha2-512, rsa-sha2-256, ecdsa-sha2-nistp256, ssh-ed25519
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: client encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: client mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: client compress: none, zlib@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server compress: none, zlib@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: client lang: <none>
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server lang: <none>
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: kex follows: False
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: === Key exchange agreements ===
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Strict kex mode: True
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Kex: curve25519-sha256@libssh.org
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: HostKey: ssh-ed25519
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Cipher: aes128-ctr
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: MAC: hmac-sha2-256
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Compression: none
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: === End of kex handshake ===
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Resetting outbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Switch to new keys ...
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Resetting inbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Got EXT_INFO: {'server-sig-algs': b'ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com,webauthn-sk-ecdsa-sha2-nistp256@openssh.com', 'publickey-hostbound@openssh.com': b'0'}
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Attempting public-key auth...
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: userauth is OK
+2025-12-13 00:35:59 [paramiko.transport] INFO: Authentication (publickey) failed.
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: starting thread (client mode): 0x9b86c5c0
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Local version/idstring: SSH-2.0-paramiko_3.4.0
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Remote version/idstring: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.13
+2025-12-13 00:35:59 [paramiko.transport] INFO: Connected (version 2.0, client OpenSSH_8.9p1)
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: === Key exchange possibilities ===
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: kex algos: curve25519-sha256, curve25519-sha256@libssh.org, ecdh-sha2-nistp256, ecdh-sha2-nistp384, ecdh-sha2-nistp521, sntrup761x25519-sha512@openssh.com, diffie-hellman-group-exchange-sha256, diffie-hellman-group16-sha512, diffie-hellman-group18-sha512, diffie-hellman-group14-sha256, kex-strict-s-v00@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server key: rsa-sha2-512, rsa-sha2-256, ecdsa-sha2-nistp256, ssh-ed25519
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: client encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server encrypt: chacha20-poly1305@openssh.com, aes128-ctr, aes192-ctr, aes256-ctr, aes128-gcm@openssh.com, aes256-gcm@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: client mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server mac: umac-64-etm@openssh.com, umac-128-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512-etm@openssh.com, hmac-sha1-etm@openssh.com, umac-64@openssh.com, umac-128@openssh.com, hmac-sha2-256, hmac-sha2-512, hmac-sha1
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: client compress: none, zlib@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server compress: none, zlib@openssh.com
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: client lang: <none>
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: server lang: <none>
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: kex follows: False
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: === Key exchange agreements ===
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Strict kex mode: True
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Kex: curve25519-sha256@libssh.org
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: HostKey: ssh-ed25519
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Cipher: aes128-ctr
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: MAC: hmac-sha2-256
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Compression: none
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: === End of kex handshake ===
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: EOF in transport thread
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Resetting outbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Switch to new keys ...
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Resetting inbound seqno after NEWKEYS due to strict mode
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Got EXT_INFO: {'server-sig-algs': b'ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com,webauthn-sk-ecdsa-sha2-nistp256@openssh.com', 'publickey-hostbound@openssh.com': b'0'}
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: Attempting password auth...
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: userauth is OK
+2025-12-13 00:35:59 [paramiko.transport] INFO: Authentication (password) successful!
+2025-12-13 00:35:59 [scrape] INFO: Conexão com o LamCAD criada com o seguinte IP e porta: ('127.0.0.1', 27018)
+2025-12-13 00:35:59 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-12-13 00:35:59 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2025-12-13 00:35:59 [scrapy-playwright] INFO: Starting download handler
+2025-12-13 00:35:59 [paramiko.transport] DEBUG: [chan 0] Max packet in: 32768 bytes
+2025-12-13 00:36:00 [paramiko.transport] DEBUG: Received global request "hostkeys-00@openssh.com"
+2025-12-13 00:36:00 [paramiko.transport] DEBUG: Rejecting "hostkeys-00@openssh.com" global request from server.
+2025-12-13 00:36:00 [paramiko.transport] DEBUG: [chan 0] Max packet out: 32768 bytes
+2025-12-13 00:36:00 [paramiko.transport] DEBUG: Secsh channel 0 opened.
+2025-12-13 00:36:00 [paramiko.transport] DEBUG: [chan 1] Max packet in: 32768 bytes
+2025-12-13 00:36:00 [paramiko.transport] DEBUG: [chan 1] Max packet out: 32768 bytes
+2025-12-13 00:36:00 [paramiko.transport] DEBUG: Secsh channel 1 opened.
+2025-12-13 00:36:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-01T00%3A00%3A00-0300&to=2011-01-01T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-17T00%3A00%3A00-0300&to=2011-01-17T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:04 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:05 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:05 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:36:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-02T00%3A00%3A00-0300&to=2011-01-02T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:08 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-18T00%3A00%3A00-0300&to=2011-01-18T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:11 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-03T00%3A00%3A00-0300&to=2011-01-03T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:11 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:15 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:36:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-04T00%3A00%3A00-0300&to=2011-01-04T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-19T00%3A00%3A00-0300&to=2011-01-19T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:15 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:15 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-20T00%3A00%3A00-0300&to=2011-01-20T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:18 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-05T00%3A00%3A00-0300&to=2011-01-05T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:18 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-21T00%3A00%3A00-0300&to=2011-01-21T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:21 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-06T00%3A00%3A00-0300&to=2011-01-06T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:23 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-22T00%3A00%3A00-0300&to=2011-01-22T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:24 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:25 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:36:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-07T00%3A00%3A00-0300&to=2011-01-07T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:27 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-23T00%3A00%3A00-0300&to=2011-01-23T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:28 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-24T00%3A00%3A00-0300&to=2011-01-24T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:30 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-08T00%3A00%3A00-0300&to=2011-01-08T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:30 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-09T00%3A00%3A00-0300&to=2011-01-09T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:33 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-25T00%3A00%3A00-0300&to=2011-01-25T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:34 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:35 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:36:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-26T00%3A00%3A00-0300&to=2011-01-26T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:37 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-10T00%3A00%3A00-0300&to=2011-01-10T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:38 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-27T00%3A00%3A00-0300&to=2011-01-27T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:41 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-11T00%3A00%3A00-0300&to=2011-01-11T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:42 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-28T00%3A00%3A00-0300&to=2011-01-28T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:45 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:45 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:36:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-12T00%3A00%3A00-0300&to=2011-01-12T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:46 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-29T00%3A00%3A00-0300&to=2011-01-29T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:48 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-13T00%3A00%3A00-0300&to=2011-01-13T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:50 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-30T00%3A00%3A00-0300&to=2011-01-30T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:53 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-14T00%3A00%3A00-0300&to=2011-01-14T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:53 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:55 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:36:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-31T00%3A00%3A00-0300&to=2011-01-31T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:55 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-15T00%3A00%3A00-0300&to=2011-01-15T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:57 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:36:59 [scrapy.extensions.logstats] INFO: Crawled 30 pages (at 30 pages/min), scraped 0 items (at 0 items/min)
+2025-12-13 00:36:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-01T00%3A00%3A00-0300&to=2011-02-01T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:36:59 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-01-16T00%3A00%3A00-0300&to=2011-01-16T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:00 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-02T00%3A00%3A00-0300&to=2011-02-02T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:04 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:05 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:37:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-03T00%3A00%3A00-0300&to=2011-02-03T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:08 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-04T00%3A00%3A00-0300&to=2011-02-04T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:11 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-05T00%3A00%3A00-0300&to=2011-02-05T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:15 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:37:15 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-06T00%3A00%3A00-0300&to=2011-02-06T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:19 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-07T00%3A00%3A00-0300&to=2011-02-07T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:23 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:25 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:37:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-08T00%3A00%3A00-0300&to=2011-02-08T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:27 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-09T00%3A00%3A00-0300&to=2011-02-09T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:30 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-10T00%3A00%3A00-0300&to=2011-02-10T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:33 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:35 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:37:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-11T00%3A00%3A00-0300&to=2011-02-11T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:38 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-12T00%3A00%3A00-0300&to=2011-02-12T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:40 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-13T00%3A00%3A00-0300&to=2011-02-13T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:43 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:45 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:37:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-14T00%3A00%3A00-0300&to=2011-02-14T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:47 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-15T00%3A00%3A00-0300&to=2011-02-15T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:50 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-16T00%3A00%3A00-0300&to=2011-02-16T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:54 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:55 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:37:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-17T00%3A00%3A00-0300&to=2011-02-17T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:37:59 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:37:59 [scrapy.extensions.logstats] INFO: Crawled 48 pages (at 18 pages/min), scraped 0 items (at 0 items/min)
+2025-12-13 00:38:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-18T00%3A00%3A00-0300&to=2011-02-18T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:02 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:05 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:38:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-19T00%3A00%3A00-0300&to=2011-02-19T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:07 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-20T00%3A00%3A00-0300&to=2011-02-20T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:09 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-21T00%3A00%3A00-0300&to=2011-02-21T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:13 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:15 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:38:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-22T00%3A00%3A00-0300&to=2011-02-22T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:17 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-23T00%3A00%3A00-0300&to=2011-02-23T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:21 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-24T00%3A00%3A00-0300&to=2011-02-24T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:24 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:25 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:38:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-25T00%3A00%3A00-0300&to=2011-02-25T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:28 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-26T00%3A00%3A00-0300&to=2011-02-26T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:31 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-27T00%3A00%3A00-0300&to=2011-02-27T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:35 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:35 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:38:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-02-28T00%3A00%3A00-0300&to=2011-02-28T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:38 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-01T00%3A00%3A00-0300&to=2011-03-01T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:43 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-02T00%3A00%3A00-0300&to=2011-03-02T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:45 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:45 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:38:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-03T00%3A00%3A00-0300&to=2011-03-03T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:49 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-04T00%3A00%3A00-0300&to=2011-03-04T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:54 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:55 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:38:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-05T00%3A00%3A00-0300&to=2011-03-05T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:56 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-06T00%3A00%3A00-0300&to=2011-03-06T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:38:59 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:38:59 [scrapy.extensions.logstats] INFO: Crawled 65 pages (at 17 pages/min), scraped 0 items (at 0 items/min)
+2025-12-13 00:39:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-07T00%3A00%3A00-0300&to=2011-03-07T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:03 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:05 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:39:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-08T00%3A00%3A00-0300&to=2011-03-08T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:07 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-09T00%3A00%3A00-0300&to=2011-03-09T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:10 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-10T00%3A00%3A00-0300&to=2011-03-10T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:14 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:15 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:39:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-11T00%3A00%3A00-0300&to=2011-03-11T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:19 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-12T00%3A00%3A00-0300&to=2011-03-12T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:21 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:25 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:39:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-13T00%3A00%3A00-0300&to=2011-03-13T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:26 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-14T00%3A00%3A00-0300&to=2011-03-14T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:30 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-15T00%3A00%3A00-0300&to=2011-03-15T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:35 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:35 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:39:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-16T00%3A00%3A00-0300&to=2011-03-16T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:39 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-17T00%3A00%3A00-0300&to=2011-03-17T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:43 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:45 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:39:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-18T00%3A00%3A00-0300&to=2011-03-18T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:46 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-19T00%3A00%3A00-0300&to=2011-03-19T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:49 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-20T00%3A00%3A00-0300&to=2011-03-20T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:53 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:55 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:39:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-21T00%3A00%3A00-0300&to=2011-03-21T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:39:58 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:39:59 [scrapy.extensions.logstats] INFO: Crawled 80 pages (at 15 pages/min), scraped 0 items (at 0 items/min)
+2025-12-13 00:40:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-22T00%3A00%3A00-0300&to=2011-03-22T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:01 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-23T00%3A00%3A00-0300&to=2011-03-23T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:04 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:06 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:40:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-24T00%3A00%3A00-0300&to=2011-03-24T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:06 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-25T00%3A00%3A00-0300&to=2011-03-25T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:10 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-26T00%3A00%3A00-0300&to=2011-03-26T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:14 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:16 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:40:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-27T00%3A00%3A00-0300&to=2011-03-27T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:17 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-28T00%3A00%3A00-0300&to=2011-03-28T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:20 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-29T00%3A00%3A00-0300&to=2011-03-29T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:23 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-30T00%3A00%3A00-0300&to=2011-03-30T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:25 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:26 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:40:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-03-31T00%3A00%3A00-0300&to=2011-03-31T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:30 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-01T00%3A00%3A00-0300&to=2011-04-01T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:33 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:36 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:40:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-02T00%3A00%3A00-0300&to=2011-04-02T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:37 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-03T00%3A00%3A00-0300&to=2011-04-03T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:40 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-04T00%3A00%3A00-0300&to=2011-04-04T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:44 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:46 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:40:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-05T00%3A00%3A00-0300&to=2011-04-05T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:48 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-06T00%3A00%3A00-0300&to=2011-04-06T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:52 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:56 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:40:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-07T00%3A00%3A00-0300&to=2011-04-07T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:40:56 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:40:59 [scrapy.extensions.logstats] INFO: Crawled 97 pages (at 17 pages/min), scraped 0 items (at 0 items/min)
+2025-12-13 00:41:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-08T00%3A00%3A00-0300&to=2011-04-08T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:00 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-09T00%3A00%3A00-0300&to=2011-04-09T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:04 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:06 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:41:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-10T00%3A00%3A00-0300&to=2011-04-10T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:09 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-11T00%3A00%3A00-0300&to=2011-04-11T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:13 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:16 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:41:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-12T00%3A00%3A00-0300&to=2011-04-12T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:16 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-13T00%3A00%3A00-0300&to=2011-04-13T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:20 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-14T00%3A00%3A00-0300&to=2011-04-14T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:24 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:26 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:41:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-15T00%3A00%3A00-0300&to=2011-04-15T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:27 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-16T00%3A00%3A00-0300&to=2011-04-16T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:31 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-17T00%3A00%3A00-0300&to=2011-04-17T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:35 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:36 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:41:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-18T00%3A00%3A00-0300&to=2011-04-18T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:39 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-19T00%3A00%3A00-0300&to=2011-04-19T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:43 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:46 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:41:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-20T00%3A00%3A00-0300&to=2011-04-20T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:47 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-21T00%3A00%3A00-0300&to=2011-04-21T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:51 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-22T00%3A00%3A00-0300&to=2011-04-22T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:54 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:56 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:41:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-23T00%3A00%3A00-0300&to=2011-04-23T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:41:58 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:41:59 [scrapy.extensions.logstats] INFO: Crawled 113 pages (at 16 pages/min), scraped 0 items (at 0 items/min)
+2025-12-13 00:42:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-24T00%3A00%3A00-0300&to=2011-04-24T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:42:01 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:42:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-25T00%3A00%3A00-0300&to=2011-04-25T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:42:03 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:42:06 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:42:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-26T00%3A00%3A00-0300&to=2011-04-26T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:42:07 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:42:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-27T00%3A00%3A00-0300&to=2011-04-27T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:42:11 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:42:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-28T00%3A00%3A00-0300&to=2011-04-28T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:42:13 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:42:16 [paramiko.transport] DEBUG: Sending global request "keepalive@lag.net"
+2025-12-13 00:42:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://g1.globo.com/busca/?q=abertos&page=1&order=recent&from=2011-04-29T00%3A00%3A00-0300&to=2011-04-29T23%3A59%3A59-0300&species=not%C3%ADcias> (referer: None)
+2025-12-13 00:42:17 [scrape] ERROR: Playwright page object missing from response meta!
+2025-12-13 00:42:19 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2025-12-13 00:42:19 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2025-12-13 00:42:20 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2025-12-13 00:42:20 [paramiko.transport] DEBUG: [chan 0] EOF sent (0)
+2025-12-13 12:00:43 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 12:00:43 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 12:04:57 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 12:04:57 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 13:40:43 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 13:40:43 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 13:50:12 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 13:50:12 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 13:57:25 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 13:57:25 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 14:01:12 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 14:01:12 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 14:15:55 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 14:15:55 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
+2025-12-13 14:19:43 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: g1)
+2025-12-13 14:19:43 [scrapy.utils.log] INFO: Versions: lxml 5.2.1.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.12.3 (main, Nov  6 2025, 13:44:16) [GCC 13.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.1 30 Jan 2024), cryptography 42.0.5, Platform Linux-6.14.0-36-generic-x86_64-with-glibc2.39
