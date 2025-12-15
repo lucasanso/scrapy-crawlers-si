@@ -127,6 +127,27 @@ class ScrapeSpider(scrapy.Spider):
         print(f"--- SPIDER PRONTO: {len(self.keywords)} palavras-chave restantes para processar ---")
 
     def start_requests(self):
+        # --- DEFINIÇÃO DO SCRIPT DE SCROLL ---
+        # Este script em JS vai rodar no navegador (Playwright).
+        # Ele desce a página, espera carregar, e verifica se a altura aumentou.
+        scroll_script = """
+            async () => {
+                let lastHeight = document.body.scrollHeight;
+                while (true) {
+                    window.scrollTo(0, document.body.scrollHeight);
+                    // Espera 2 segundos para o conteúdo carregar (ajuste se necessário)
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    let newHeight = document.body.scrollHeight;
+                    // Se a altura não mudou após o scroll e a espera, chegamos ao fim
+                    if (newHeight === lastHeight) {
+                        break;
+                    }
+                    lastHeight = newHeight;
+                }
+            }
+        """
+
         start_date = datetime(self.target_year, 1, 1)
         end_date = datetime.now() if self.target_year == datetime.now().year else datetime(self.target_year, 12, 31)
 
@@ -135,20 +156,23 @@ class ScrapeSpider(scrapy.Spider):
             curr = start_date
             while curr <= end_date:
                 url = build_page_search_url(keyword, curr)
+                
                 meta = {
                     'keyword': keyword, 'date': curr,
                     'playwright': True, 'playwright_include_page': True,
                     'playwright_page_methods': [
                         PageMethod("wait_for_selector", "ul.results__list", timeout=15000),
-                        PageMethod("evaluate", "window.scrollBy(0, document.body.scrollHeight)"),
-                        PageMethod("wait_for_timeout", 2000), 
+                        # Agora a variável scroll_script existe e contém o código JS
+                        PageMethod("evaluate", scroll_script),
+                        # Uma espera final de segurança
+                        PageMethod("wait_for_timeout", 1000), 
                     ]
                 }
+                
                 yield scrapy.Request(url, self.parse_results_page, meta=meta, errback=self.errback_close, dont_filter=True)
                 curr += timedelta(days=1)
             
             # --- SALVAR CHECKPOINT ---
-            # O código chega aqui apenas quando o loop 'while' acima termina (todas as datas agendadas)
             self.save_checkpoint(keyword)
             self.logger.info(f"💾 CHECKPOINT SALVO: '{keyword}' marcada como concluída.")
 
