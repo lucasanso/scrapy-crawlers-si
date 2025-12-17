@@ -288,18 +288,69 @@ class ScrapeSpider(scrapy.Spider):
             item['id_event'] = None 
         
         return item
+        
+    def clean_text(self, text_list):
+        """Remove espaços extras e junta a lista de textos."""
+        if not text_list:
+            return None
+        # Junta, remove quebras de linha excessivas e espaços nas pontas
+        full_text = ' '.join([t.strip() for t in text_list if t.strip()])
+        return full_text if len(full_text) > 50 else None # Filtra textos muito curtos (provavelmente erro)
 
     def parse_news_v1(self, response):
-        sub = ' '.join(response.css('h2::text').getall())
-        art = sub + ' ' + ' '.join(response.css("div#materia-letra p::text").getall()).strip()
+        """
+        Layout Antigo / Blogs antigos
+        Geralmente usa div#materia-letra ou div.entry-content
+        """
+        # Tenta pegar o subtítulo
+        sub = response.css('h2::text').getall()
+        sub = ' '.join([s.strip() for s in sub if s.strip()])
+        
+        # Seletores para o corpo
+        body_selectors = [
+            "div#materia-letra p::text",
+            "div.entry-content p::text",
+            "div.post-content p::text"
+        ]
+        
+        art = None
+        for selector in body_selectors:
+            texts = response.css(selector).getall()
+            art = self.clean_text(texts)
+            if art: break
+            
+        if not art: return None # Falha no parse V1
+
+        full_art = (sub + ' ' + art).strip()
         dt = self.extract_date(response)
-        return self._base_item(response, art, dt)
+        return self._base_item(response, full_art, dt)
 
     def parse_news_v2(self, response):
-        art = ' '.join(response.css("article[itemprop='articleBody'] p::text").getall())
-        sub = response.css("h2[itemprop='alternativeHeadline']::text").get() or ""
-        full_art = sub + " " + art
+        """
+        Layout Moderno (Padrão atual do G1)
+        """
+        # Subtítulo (linha fina)
+        sub = response.css("h2.content-head__subtitle::text").get() or \
+              response.css("h2[itemprop='alternativeHeadline']::text").get() or ""
+        
+        texts = response.css("article p.content-text__container::text").getall()
+
+        if not texts:
+            texts = response.css("div.mc-column.content-text p::text").getall()
+
+        if not texts:
+            texts = response.css("article[itemprop='articleBody'] p::text").getall()
+
+        if not texts:
+            texts = response.css("div.widget--info__text-container p::text").getall()
+
+        art = self.clean_text(texts)
+        
+        if not art: return None 
+
+        full_art = (sub.strip() + " " + art).strip()
         dt = self.extract_date(response)
+        
         return self._base_item(response, full_art, dt)
 
     def search_gangs(self, art):
