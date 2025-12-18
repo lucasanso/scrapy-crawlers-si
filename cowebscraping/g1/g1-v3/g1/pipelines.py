@@ -1,8 +1,3 @@
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-
 from itemadapter import ItemAdapter
 from scrapy.exporters import JsonItemExporter
 from sshtunnel import open_tunnel
@@ -18,31 +13,20 @@ try:
         configs = yaml.safe_load(configs_file)
 except FileNotFoundError:
     print("ERRO CRÍTICO: Arquivo config.yaml não encontrado!")
+    
+    # O programa terminou com erro (com o 0 seria sucesso).
     sys.exit(1)
-
-class G1Pipeline:
-    def process_item(self, item, spider):
-        return item
 
 # MongoDB LaMCAD
 class MongoDBPipeline:
-    def __init__(self, mongodb_uri, mongodb_database, mongodb_accepted_news_collection,
-                 mongodb_unaccepted_news_collection):
-        self.mongodb_uri = mongodb_uri
-        self.mongodb_database = mongodb_database
-        self.mongodb_accepted_news_collection = mongodb_accepted_news_collection
-        self.mongodb_unaccepted_news_collection = mongodb_unaccepted_news_collection
+    def __init__(self):
+        self.mongodb_uri = configs['mongodb_lamcad']['uri']
+        self.mongodb_database = configs['mongodb_lamcad']['database']
+        self.mongodb_accepted_news_collection = configs['mongodb_lamcad']['accepted_news_collection']
+        self.mongodb_unaccepted_news_collection = configs['mongodb_lamcad']['unaccepted_news_collection']
+        
         self.server = None
         self.client = None
-
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(
-            mongodb_uri=configs['mongodb_lamcad']['uri'],
-            mongodb_database=configs['mongodb_lamcad']['database'],
-            mongodb_accepted_news_collection=configs['mongodb_lamcad']['accepted_news_collection'],
-            mongodb_unaccepted_news_collection=configs['mongodb_lamcad']['unaccepted_news_collection']
-        )
 
     def open_spider(self, spider):
         # Fazendo a conexão ssh com o servidor
@@ -111,18 +95,21 @@ class MongoDBPipeline:
         return item
     
     def get_accepted_news_count(self):
-        return self.accepted_news_collection.count_documents({})
+        return self.accepted_news_collection.count_documents({}) # sem filtro, ou seja, qualquer coisa escrita vai somar
 
     def get_next_id_event(self):
-        # Busca segura: evita erro se a coleção estiver vazia
+        # Função que calcula o próximo id da coleção de notícias aceitas. 
         last_record = self.accepted_news_collection.find_one(sort=[('id_event', -1)])
         
         if last_record and 'id_event' in last_record:
             return last_record['id_event'] + 1
-        return 1 # Começa do 1 se for o primeiro registro
+            
+        # é como se tivesse um else aqui, para caso o banco esteja vazio, daí retorna 1.
+        return 1 
 
     def set_news_data(self, news):
-        # Define todos os campos extras como None e gera o ID
+        # Define todos os campos extras como None e insere o id obtido em get_next_id_event.
+        
         news['manual_relevance_class'] = None
         news['automatic_relevance_class'] = None
         news['relevance_model'] = None
@@ -145,29 +132,3 @@ class MongoDBPipeline:
         news['ator2_nome'] = None
         news['ator2_cod'] = None
         news['tipo_relacao_entre_atores'] = None
-
-class TxtPipeline:
-    def __init__(self, path):
-        self.path = path
-        self.file = None
-
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(
-            path=crawler.settings.get('SEEN_URLS_FILE_PATH')
-        )
-
-    def open_spider(self, spider):
-        if self.path:
-            self.file = open(self.path, 'a')
-
-    def close_spider(self, spider):
-        if self.file:
-            self.file.close()
-
-    def process_item(self, item, spider):
-        if self.file:
-            item_url = dict(G1Item(item)).get('url')
-            if item_url:
-                self.file.write(item_url + '\n')
-        return item
