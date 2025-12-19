@@ -9,31 +9,31 @@ import yaml
 from unidecode import unidecode
 import sys
 import os  # Necessário para verificar existência do arquivo de checkpoint
-
-# Playwright
 from scrapy_playwright.page import PageMethod
 
 from ..items import G1Item
 from ..keywords import SEARCH_KEYWORDS, VALIDATION_KEYWORDS, SEARCH_KEYWORDS_CHUNKS
 
-# --- CONFIGURAÇÕES GLOBAIS ---
+# Configurações globais.
 ORDER = 'recent'
 SPECIES = quote('notícias')
 SEARCH_DATE_FORMAT = r'%Y-%m-%d'
 PAGE_SEARCH_URL_TEMPLATE = 'https://g1.globo.com/busca/?q={}&order={}&from={}T00%3A00%3A00-0300&to={}T23%3A59%3A59-0300&species={}'
 CHECKPOINT_FILE = 'checkpoints.yaml'
 
+
+# Método complementar para bloquear medias como vídeo e imagem -> Poupar tempo e memória RAM a ser consumida durante o crawler.
 def should_abort_request(request):
-    """
-    Bloqueia requisições de imagens, mídia (vídeo/áudio), fontes e stylesheets
-    para economizar banda e focar apenas no HTML/Texto.
-    """
     return request.resource_type in ["image", "media", "font", "stylesheet"]
 
+
+# Método que constrói a URL a ser pesquisada com cada uma das palavras-chave. Ex: "pcc"
 def build_page_search_url(keyword, date):
     day_str = date.strftime(SEARCH_DATE_FORMAT)
     return PAGE_SEARCH_URL_TEMPLATE.format(quote(keyword), ORDER, day_str, day_str, SPECIES)
 
+
+# Método que retorna a quantidade de notícias aceitas e não aceitas.
 def get_seen_urls_from_mongodb(load_unaccepted=True):
     """
     Conecta ao MongoDB via SSH e retorna uma lista de URLs que já existem no banco.
@@ -63,13 +63,13 @@ def get_seen_urls_from_mongodb(load_unaccepted=True):
         client = pymongo.MongoClient(mg['uri'])
         db = client[mg['database']]
         
-        # 1. Carrega ACEITAS
+        # 1. Carregando ACEITAS
         accepted_col = db[mg['accepted_news_collection']]
         accepted_urls = [doc['url'] for doc in accepted_col.find({}, {'url': 1})]
         print(f"   -> Encontradas {len(accepted_urls)} notícias ACEITAS.")
         seen_urls.extend(accepted_urls)
 
-        # 2. Carrega RECUSADAS (Se solicitado)
+        # 2. Carregando RECUSADAS
         if load_unaccepted:
             unaccepted_col = db[mg['unaccepted_news_collection']]
             unaccepted_urls = [doc['url'] for doc in unaccepted_col.find({}, {'url': 1})]
@@ -87,25 +87,29 @@ def get_seen_urls_from_mongodb(load_unaccepted=True):
     
     return set(seen_urls)
 
+
+# Classe do spider G1
 class ScrapeSpider(scrapy.Spider):
     name = "scrape"
     allowed_domains = ["g1.globo.com", "globo.com"]
-
+    
+    # Configurações do crawler
     custom_settings = {
         'DOWNLOAD_HANDLERS': {
             'http': 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
             'https': 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
         },
         'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
-        'PLAYWRIGHT_LAUNCH_OPTIONS': {'headless': True, 'timeout': 20000},
+        'PLAYWRIGHT_LAUNCH_OPTIONS': {'headless': True, 'timeout': 20000},             # headless : True faz com que não apareça o navegador simulado.
         'CONCURRENT_REQUESTS': 4,
-        # Adicione esta linha para bloquear imagens e vídeos:
         'PLAYWRIGHT_ABORT_REQUEST': should_abort_request, 
         'ITEM_PIPELINES': {
             'g1.pipelines.MongoDBPipeline': 300,
         }
     }
     
+    
+    # Método que inicia o crawler; Carrega as palavras-chave; Recebe as palavras-chave para passar como parâmetro [scrapy crawl scrape -a k="pcc" I scrapy crawl scrape -a c=1]
     def __init__(self, name=None, **kwargs):
         super().__init__(name, **kwargs)
         self.items = [] 
@@ -113,14 +117,13 @@ class ScrapeSpider(scrapy.Spider):
         is_recheck = kwargs.get('recheck') == 'True'
         self.seen_urls = get_seen_urls_from_mongodb(load_unaccepted=not is_recheck)
         
-        # Carrega todas as keywords alvo
+        # Carrega todas as palavras-chave
         raw_keywords = []
         if kwargs.get('k'): raw_keywords = [kwargs.get('k')]
         elif kwargs.get('c'): raw_keywords = SEARCH_KEYWORDS_CHUNKS[int(kwargs.get('c'))]
         else: raw_keywords = SEARCH_KEYWORDS
-
-        # --- LÓGICA DE CHECKPOINT (Filtro) ---
-        # Se NÃO for recheck, removemos as keywords que já foram concluídas
+    
+        # Lógica de checkpoint
         if not is_recheck:
             completed_keywords = self.load_checkpoints()
             self.keywords = [k for k in raw_keywords if k not in completed_keywords]
@@ -130,24 +133,32 @@ class ScrapeSpider(scrapy.Spider):
         else:
             self.keywords = raw_keywords
 
-        self.target_year = int(kwargs.get('y')) if kwargs.get('y') else 2024
+        self.target_year = int(kwargs.get('y')) if kwargs.get('y') else 2023
         
         print(f"--- SPIDER PRONTO: {len(self.keywords)} palavras-chave restantes para processar ---")
 
+
+    # Método que inicia as requisições do Playwright para simular a navegação do navegador.
     def start_requests(self):
-        # --- DEFINIÇÃO DO SCRIPT DE SCROLL ---
-        # Este script em JS vai rodar no navegador (Playwright).
-        # Ele desce a página, espera carregar, e verifica se a altura aumentou.
+        # Logo abaixo tem-se um trecho de código em JavaScript para simular a navegação.
+        # Lógica do código:
+        
+        # 1. Mede a página.
+        # 2. Desce tudo.
+        # 3. Espera 2 segundos.
+        # 4. Mede de novo.
+        # 5. Cresceu? Repete o processo.
+        # 6. Não cresceu? Acabou, pode sair e coletar os links.
+        
+        
         scroll_script = """
             async () => {
                 let lastHeight = document.body.scrollHeight;
                 while (true) {
                     window.scrollTo(0, document.body.scrollHeight);
-                    // Espera 2 segundos para o conteúdo carregar (ajuste se necessário)
                     await new Promise(resolve => setTimeout(resolve, 2000));
                     
                     let newHeight = document.body.scrollHeight;
-                    // Se a altura não mudou após o scroll e a espera, chegamos ao fim
                     if (newHeight === lastHeight) {
                         break;
                     }
@@ -155,7 +166,9 @@ class ScrapeSpider(scrapy.Spider):
                 }
             }
         """
-
+        # Por que usar um script de JS? Porque o G1 possui rolagem infinita.
+        # A ideia é rolar até encontrar a última notícia. Após encontrar o final da página, extrair cada uma das notícias do dia.
+        
         start_date = datetime(self.target_year, 1, 1)
         end_date = datetime.now() if self.target_year == datetime.now().year else datetime(self.target_year, 12, 31)
 
@@ -180,13 +193,12 @@ class ScrapeSpider(scrapy.Spider):
                 yield scrapy.Request(url, self.parse_results_page, meta=meta, errback=self.errback_close, dont_filter=True)
                 curr += timedelta(days=1)
             
-            # --- SALVAR CHECKPOINT ---
             self.save_checkpoint(keyword)
-            self.logger.info(f"💾 CHECKPOINT SALVO: '{keyword}' marcada como concluída.")
+            self.logger.info(f"💾 PALAVRA-CHAVE '{keyword}' foi totalmente processada. Salvando no arquivo.")
 
-    # --- MÉTODOS DE CHECKPOINT ---
+
+    # Método que lê o arquivo .yaml e retorna uma lista das palavras-chave já finalizadas
     def load_checkpoints(self):
-        """Lê o arquivo YAML e retorna uma lista de keywords já finalizadas."""
         if not os.path.exists(CHECKPOINT_FILE):
             return []
         try:
@@ -198,8 +210,9 @@ class ScrapeSpider(scrapy.Spider):
             print(f"⚠️ Erro ao ler checkpoint: {e}")
         return []
 
+
+    # Método que adiciona a palvra-chave que foi totalmente processada no arquivo .yaml (checkpoint).
     def save_checkpoint(self, keyword):
-        """Adiciona uma keyword ao arquivo YAML de checkpoints."""
         completed = self.load_checkpoints()
         if keyword not in completed:
             completed.append(keyword)
@@ -208,7 +221,9 @@ class ScrapeSpider(scrapy.Spider):
                     yaml.dump({'completed_keywords': completed}, f)
             except Exception as e:
                 self.logger.error(f"Erro ao salvar checkpoint: {e}")
-
+    
+    
+    # Método que, para cada link, verifica se está no banco de dados [unaccepted], caso não estiver, chama o método de parse_news para extrair a notícia.
     async def parse_results_page(self, response):
         page = response.meta["playwright_page"]
         try:
@@ -222,10 +237,13 @@ class ScrapeSpider(scrapy.Spider):
                     except: pass
                 clean_links.append(l)
 
-            self.logger.info(f"[{response.meta['date'].strftime('%d/%m')}] KW: {response.meta['keyword']} - Encontrados: {len(clean_links)}")
+            self.logger.info(f"[{response.meta['date'].strftime('%d/%m')}] KW: {response.meta['keyword']} - qtd. URLs encontradas: {len(clean_links)}")
 
             for url in clean_links:
-                if url not in self.seen_urls:
+                if url in self.seen_urls:
+                    # Se já está na memória, avisamos no terminal e pulamos
+                    print(f"⏭️  Pulando URL [JÁ ESTÁ NO BANCO]: {url}")
+                else:
                     news_meta = response.meta.copy()
                     news_meta.pop('playwright', None)
                     news_meta.pop('playwright_include_page', None)
@@ -235,10 +253,14 @@ class ScrapeSpider(scrapy.Spider):
         finally:
             await page.close()
 
+
+    # Método que, caso a requisição do navegador falhe (abrir a página), fecha a página para não sobrecarregar a memória RAM.
     async def errback_close(self, failure):
         if failure.request.meta.get("playwright_page"):
             await failure.request.meta["playwright_page"].close()
-
+    
+    
+    # Método que chama dois métodos de parse (layout antigo e novo).
     def parse_news(self, response):
         if response.url in self.seen_urls: return
 
@@ -250,11 +272,15 @@ class ScrapeSpider(scrapy.Spider):
         if item:
             self.seen_urls.add(response.url)
             yield item
-
+    
+    
+    # Método para selecionar qual versão de parse (v1 ou v2) será utilizada.
     def try_parse(self, response, method):
         try: return method(response)
         except: return None
-
+    
+    
+    # Método para extrair a data de publicação e formatá-la.
     def extract_date(self, response):
         # 1. Tenta atributo datetime (ex: 2024-01-11T04:00...)
         iso_date = response.css('time[itemprop="datePublished"]::attr(datetime)').get()
@@ -277,7 +303,9 @@ class ScrapeSpider(scrapy.Spider):
             except: pass
 
         return None
-
+    
+    
+    # Método que insere preenche os atributos da notícia de acordo com o que foi extraído pelos seletores CSS.
     def _base_item(self, response, article, date_obj=None):
         item = G1Item()
         item['url'] = response.url
@@ -296,21 +324,20 @@ class ScrapeSpider(scrapy.Spider):
             item['id_event'] = None 
         
         return item
-        
+    
+    
+    # Método para formatar o corpo-texto da notícia -> Facilitar a leitura da classificação manual.
     def clean_text(self, text_list):
-        """Remove espaços extras e junta a lista de textos."""
         if not text_list:
             return None
+            
         # Junta, remove quebras de linha excessivas e espaços nas pontas
         full_text = ' '.join([t.strip() for t in text_list if t.strip()])
         return full_text if len(full_text) > 50 else None # Filtra textos muito curtos (provavelmente erro)
-
+    
+    
+    # Método que usa seletores CSS para o layout antigo do G1 (páginas mais antigas).
     def parse_news_v1(self, response):
-        """
-        Layout Antigo / Blogs antigos
-        Geralmente usa div#materia-letra ou div.entry-content
-        """
-        # Tenta pegar o subtítulo
         sub = response.css('h2::text').getall()
         sub = ' '.join([s.strip() for s in sub if s.strip()])
         
@@ -332,12 +359,10 @@ class ScrapeSpider(scrapy.Spider):
         full_art = (sub + ' ' + art).strip()
         dt = self.extract_date(response)
         return self._base_item(response, full_art, dt)
-
+    
+    
+    # Método que usa seletores CSS para o layout moderno do G1.
     def parse_news_v2(self, response):
-        """
-        Layout Moderno (Padrão atual do G1)
-        """
-        # Subtítulo (linha fina)
         sub = response.css("h2.content-head__subtitle::text").get() or \
               response.css("h2[itemprop='alternativeHeadline']::text").get() or ""
         
@@ -361,13 +386,17 @@ class ScrapeSpider(scrapy.Spider):
         
         return self._base_item(response, full_art, dt)
 
+
+    # Método que preenche a lista de gangues ['gangs']
     def search_gangs(self, art):
         if not art: return []
         found = []
         for p in VALIDATION_KEYWORDS['GANGS']:
             found += re.findall(p, unidecode(art), re.IGNORECASE)
         return found
-
+    
+    
+    # Método que preenche o atributo 'accepted_by'.
     def accept_article(self, art):
         if not art: return False
         org = False
