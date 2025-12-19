@@ -1,7 +1,5 @@
-from itemadapter import ItemAdapter
-from scrapy.exporters import JsonItemExporter
 from sshtunnel import open_tunnel
-import pymongo
+import pymongo 
 import sys
 import yaml
 
@@ -28,6 +26,7 @@ class MongoDBPipeline:
         self.server = None
         self.client = None
 
+    # Método que inicia o pipeline settando as credenciais do arquivo .yaml no SSH e conectando ao MongoDB.
     def open_spider(self, spider):
         # Fazendo a conexão ssh com o servidor
         lamcad_configs = configs['lamcad']
@@ -50,13 +49,16 @@ class MongoDBPipeline:
             self.unaccepted_news_collection = database[self.mongodb_unaccepted_news_collection]
         except Exception as e:
             spider.logger.error(f"Erro crítico ao conectar no banco ou SSH: {e}")
-
+            
+            
+    # Método que interrompe o pipeline.
     def close_spider(self, spider):
         if self.client:
             self.client.close()
         if self.server:
             self.server.stop()
     
+    # Método que insere as notícias aceitas e não aceitas nas respectivas coleções.
     def process_item(self, item, spider):
         # Transforma o item Scrapy em um dicionário Python
         data = dict(G1Item(item))
@@ -75,30 +77,31 @@ class MongoDBPipeline:
             self.unaccepted_news_collection.delete_one({'url': data.get('url')})
             
         else:
-            # --- CAMINHO 2: APENAS URL VISITADA (UNACCEPTED) ---
             # Verifica se a URL já existe na coleção para não duplicar
             if not self.unaccepted_news_collection.find_one({'url': data.get('url')}):
                 print(f"🚫 [MONGODB] Salvando na coleção UNACCEPTED (Apenas URL): {data.get('url')}")
                 
-                # --- AQUI ESTÁ A MUDANÇA QUE VOCÊ PEDIU ---
-                # Criamos um dicionário contendo APENAS a URL.
-                # O MongoDB vai adicionar o _id automaticamente.
+                
+                # Formatação da notícia não aceita: composta pelo id (preenchido automaticamente pelo MongoDB) e pela URL
                 minimal_data = {
                     'url': data.get('url')
                 }
                 
                 self.unaccepted_news_collection.insert_one(minimal_data)
             else:
-                # print(f"⏭️ URL já existe no Unaccepted (Pulando): {data.get('url')}")
+                # Exibe no terminal se a URL já está na coleção de notícias não aceitas.
+                print(f"⏭️ URL já existe no Unaccepted (Pulando): {data.get('url')}")
                 pass
                 
         return item
-    
+        
+        
+    # Método que calcula a quantidade de notícias aceitas no banco.
     def get_accepted_news_count(self):
-        return self.accepted_news_collection.count_documents({}) # sem filtro, ou seja, qualquer coisa escrita vai somar
-
-    def get_next_id_event(self):
-        # Função que calcula o próximo id da coleção de notícias aceitas. 
+        return self.accepted_news_collection.count_documents({}) # sem filtro, ou seja, qualquer coisa escrita vai somar no contador
+        
+    
+    def get_next_id_event(self): 
         last_record = self.accepted_news_collection.find_one(sort=[('id_event', -1)])
         
         if last_record and 'id_event' in last_record:
@@ -107,6 +110,9 @@ class MongoDBPipeline:
         # é como se tivesse um else aqui, para caso o banco esteja vazio, daí retorna 1.
         return 1 
 
+
+
+    # Método que adiciona os campos que serão preenchidos via LLM do Davi 
     def set_news_data(self, news):
         # Define todos os campos extras como None e insere o id obtido em get_next_id_event.
         
