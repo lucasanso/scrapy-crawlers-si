@@ -23,6 +23,13 @@ SEARCH_DATE_FORMAT = r'%Y-%m-%d'
 PAGE_SEARCH_URL_TEMPLATE = 'https://g1.globo.com/busca/?q={}&order={}&from={}T00%3A00%3A00-0300&to={}T23%3A59%3A59-0300&species={}'
 CHECKPOINT_FILE = 'checkpoints.yaml'
 
+def should_abort_request(request):
+    """
+    Bloqueia requisições de imagens, mídia (vídeo/áudio), fontes e stylesheets
+    para economizar banda e focar apenas no HTML/Texto.
+    """
+    return request.resource_type in ["image", "media", "font", "stylesheet"]
+
 def build_page_search_url(keyword, date):
     day_str = date.strftime(SEARCH_DATE_FORMAT)
     return PAGE_SEARCH_URL_TEMPLATE.format(quote(keyword), ORDER, day_str, day_str, SPECIES)
@@ -92,12 +99,13 @@ class ScrapeSpider(scrapy.Spider):
         'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
         'PLAYWRIGHT_LAUNCH_OPTIONS': {'headless': True, 'timeout': 20000},
         'CONCURRENT_REQUESTS': 4,
-        # Força o uso do Pipeline correto
+        # Adicione esta linha para bloquear imagens e vídeos:
+        'PLAYWRIGHT_ABORT_REQUEST': should_abort_request, 
         'ITEM_PIPELINES': {
             'g1.pipelines.MongoDBPipeline': 300,
         }
     }
-
+    
     def __init__(self, name=None, **kwargs):
         super().__init__(name, **kwargs)
         self.items = [] 
