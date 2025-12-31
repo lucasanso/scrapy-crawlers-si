@@ -56,9 +56,3 @@ Basta executar o comando abaixo para iniciar a extração de notícias do G1 uti
 ```bash
 $ scrapy crawl scrape
 ```
-
-
-
-```bash
-$ scrapy crawl scrape -a k="pcc" -a y=2015
-```
