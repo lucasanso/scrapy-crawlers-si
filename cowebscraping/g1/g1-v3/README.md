@@ -1,4 +1,4 @@
-# G1-v3
+# Crawler G1 com Scrapy-Playwright
 
 Este é um programa escrito em Python e desenvolvido utilizando o framework Scrapy
 
