@@ -51,41 +51,13 @@ Seu principal objetivo é obter notícias do portal G1.
 ## Execução
 
 ### Modo geral
-Basta executar o comando abaixo para iniciar a extração de notícias do G1 utilizando as palvras-chave do script `g1/keywords.py` e os anos armazenados na varíavel `YEARS` do script `g1/spiders/scrape.py` nas buscas.
+Basta executar o comando abaixo para iniciar a extração de notícias do G1 utilizando as palvras-chave do script `g1/keywords.py`:
 
 ```bash
 $ scrapy crawl scrape
 ```
 
-### Especificando um chunk de palavras-chave para buscar
 
-Existem, atualmente, 2 chunks de palavras-chave. Ambos com a mesma quantidade.
-
-Executando o comando abaixo, a busca será feita sobre o primeiro chunk de palavras-chave.
-
-```bash
-$ scrapy crawl scrape -a c=1
-```
-
-### Especificando um termo-chave para buscar
-
-Executando o comando abaixo, a busca será feita considerando apenas o termo "pcc" e os anos armazenados na varíavel `YEARS` do script `g1/spiders/scrape.py`.
-
-```bash
-$ scrapy crawl scrape -a k="pcc"
-```
-
-### Especificando um ano
-
-Executando o comando abaixo, a busca será feita considerando apenas o ano 2015 e os termos-chave armazenados no script `g1/keywords.py`.
-
-```bash
-$ scrapy crawl scrape -a y=2015
-```
-
-### Especificando termo e ano
-
-Executando o comando abaixo, a busca feita considerando apenas o termo "pcc" e o ano 2015.
 
 ```bash
 $ scrapy crawl scrape -a k="pcc" -a y=2015
